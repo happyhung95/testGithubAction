@@ -14,4 +14,3 @@ jobs:
           github_token: ${{ secrets.TOKEN }}
           branch_prefix: bugs
           base_branch: features
-          labels: merge-branches
