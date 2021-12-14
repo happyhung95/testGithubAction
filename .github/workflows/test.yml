@@ -13,7 +13,7 @@ jobs:
       - name: Reset features branch
         run: |
           git fetch origin bugs:bugs
-          gir reset --hard bugs
+          git reset --hard bugs
       - uses: peter-evans/create-pull-request@v3
         name: Create PR to features
         with:
