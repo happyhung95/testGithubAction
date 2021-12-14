@@ -1,8 +1,7 @@
 name: Merge branch Action
 on:
-  pull_request:
-    branches:
-      - bugs
+  schedule:
+    - cron:  '*/1 * * * *'
 jobs:
   Create-Pull-Request-Action:
     runs-on: ubuntu-latest
@@ -17,4 +16,7 @@ jobs:
       - uses: peter-evans/create-pull-request@v3
         name: Create PR to features
         with:
-          branch: bugs-promotion
+          branch: bugs
+          commit-message: Merge bugs to features
+          title: Merge bugs to features
+          body: Automated PR to merge bugs to features
