@@ -1,7 +1,7 @@
 name: Merge branch Action
 on:
   schedule:
-    - cron:  '*/1 * * * *'
+    - cron:  '19 * * * *'
 jobs:
   Create-Pull-Request-Action:
     runs-on: ubuntu-latest
