@@ -1,5 +1,10 @@
 name: Merge branch Action
+
 on:
+  workflow_dispatch:
+    inputs:
+      Merge-bugs-to-features:
+        required: true
   schedule:
     - cron:  '3 0 * * *'
 jobs:
@@ -20,3 +25,4 @@ jobs:
           commit-message: Merge bugs to features
           title: Merge bugs to features
           body: Automated PR to merge bugs to features
+          
