@@ -8,14 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: features
+      - name: Reset features branch
+        run: |
+          git fetch origin bugs:bugs
+          gir reset --hard bugs
       - uses: peter-evans/create-pull-request@v3
         name: Create PR to features
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Automated PR
-          title: 'Auto PR'
-          branch: features
-          base: bugs
-          draft: true
-
-          
+          branch: bugs-promotion
