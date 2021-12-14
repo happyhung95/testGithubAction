@@ -16,5 +16,6 @@ jobs:
           title: 'Auto PR'
           branch: features
           base: bugs
+          draft: true
 
           
