@@ -7,10 +7,13 @@ jobs:
   Create-Pull-Request-Action:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: quangvo09/pull-request-action@v1
+      - uses: actions/checkout@v2
+      - uses: peter-evans/create-pull-request@v3
         name: Create PR to features
         with:
-          github_token: ${{ secrets.TOKEN }}
-          branch_prefix: bugs
-          base_branch: features
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Automated PR
+          title: 'Auto PR'
+          branch: bugs
+
+          
