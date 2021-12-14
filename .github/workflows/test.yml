@@ -14,6 +14,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Automated PR
           title: 'Auto PR'
-          branch: bugs
+          branch: features
+          base: bugs
 
           
